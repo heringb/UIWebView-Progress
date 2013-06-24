@@ -89,6 +89,7 @@ static const char NJKWebViewProxyDelegateKey;
 - (void)_setDelegate:(id<UIWebViewDelegate>)delegate
 {
     if ([self _delegate] && delegate != self.progressProxy) {
+        self.progressProxy.webViewProxyDelegate  = delegate;
         self.webViewProxyDelegate = delegate;
         return;
     }
